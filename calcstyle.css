@@ -5,15 +5,22 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
+    background-color: #f0f0f0; /* Set your desired background color */
 }
 
 .calculator {
     width: 300px;
+    margin: 0 auto; /* Center the calculator horizontally */
     background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
-    border: 1px solid #ccc;
+    border: 0.5inch solid #333; /* Add a 0.5 inch border with a dark color (#333) */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 0.25inch; /* 0.25 inch space below the title */
+    text-align: center;
 }
 
 select, input, button {
