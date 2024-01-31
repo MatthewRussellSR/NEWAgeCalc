@@ -42,6 +42,6 @@ button:hover {
     background-color: #45a049;
 }
 
-#result, #minBuckets {
+#result, #height, #breakdown, #minBuckets {
     font-weight: bold;
 }
