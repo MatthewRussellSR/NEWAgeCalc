@@ -8,6 +8,10 @@
 </head>
 <body>
     <div class="calculator">
+        <div style="margin-bottom: 0.25inch;"></div> <!-- 0.25 inch space above the title -->
+        <h2 style="text-align: center;">Estimation Calculator</h2> <!-- Title -->
+        <div style="margin-bottom: 0.25inch;"></div> <!-- 0.25 inch space above the form -->
+
         <label for="firebox">Select Firebox Size:</label>
         <select id="firebox">
             <option value="42">42" Fire Box</option>
@@ -15,23 +19,7 @@
             <option value="60">60" Fire Box</option>
         </select>
 
-        <label for="arches">Arches (Quantity):</label>
-        <input type="number" id="arches" value="0">
-
-        <label for="storageBoxes">Storage Boxes (Quantity):</label>
-        <input type="number" id="storageBoxes" value="0">
-
-        <label for="outerBlock">Outer Block (Quantity):</label>
-        <input type="number" id="outerBlock" value="0">
-
-        <label for="clayFlu">Clay Flu (Quantity):</label>
-        <input type="number" id="clayFlu" value="0">
-
-        <label for="bucketsMortar">Buckets Mortar (Quantity):</label>
-        <input type="number" id="bucketsMortar" value="0">
-
-        <label for="fullBrick">Full Brick (Quantity):</label>
-        <input type="number" id="fullBrick" value="0">
+        <!-- ... (rest of your form) ... -->
 
         <button onclick="calculateTotal()">Calculate Total</button>
 
