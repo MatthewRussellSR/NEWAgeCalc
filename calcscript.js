@@ -8,41 +8,42 @@ function calculateTotal() {
     const fullBrick = document.getElementById('fullBrick').value;
 
     const fireboxPrice = getFireboxPrice(fireboxSize);
-    const archesPrice = arches * getDiscountedPrice("Arches");
-    const storageBoxesPrice = storageBoxes * getDiscountedPrice("Storage Boxes");
-    const outerBlockPrice = outerBlock * getDiscountedPrice("Outer Block");
-    const clayFluPrice = clayFlu * getDiscountedPrice("Clay Flu");
-    const bucketsMortarPrice = bucketsMortar * getDiscountedPrice("Buckets Mortar");
-    const fullBrickPrice = fullBrick * getDiscountedPrice("Full Brick");
+    const archesPrice = arches * 150;
+    const storageBoxesPrice = storageBoxes * 1075;
+    const outerBlockPrice = outerBlock * 120;
+    const clayFluPrice = clayFlu * 105;
+    const bucketsMortarPrice = bucketsMortar * 105;
+    const fullBrickPrice = fullBrick * 4;
 
     const totalCost = fireboxPrice + archesPrice + storageBoxesPrice + outerBlockPrice + clayFluPrice + bucketsMortarPrice + fullBrickPrice;
     const minBuckets = calculateMinBuckets(fireboxSize);
 
+    const height = calculateHeight(fireboxSize, outerBlock);
+
+    const breakdown = `
+        Firebox Price: $${fireboxPrice.toFixed(2)}
+        Arches: $${archesPrice.toFixed(2)}
+        Storage Boxes: $${storageBoxesPrice.toFixed(2)}
+        Outer Block: $${outerBlockPrice.toFixed(2)}
+        Clay Flu: $${clayFluPrice.toFixed(2)}
+        Buckets of Mortar: $${bucketsMortarPrice.toFixed(2)}
+        Full Brick: $${fullBrickPrice.toFixed(2)}
+    `;
+
     document.getElementById('result').innerText = `Total Cost: $${totalCost.toFixed(2)}`;
+    document.getElementById('height').innerText = `Height: ${height} inches`;
+    document.getElementById('breakdown').innerText = `Breakdown:\n${breakdown}`;
     document.getElementById('minBuckets').innerText = `Minimum Buckets of Mortar: ${minBuckets}`;
 }
 
 function getFireboxPrice(size) {
     const prices = {
-        "42": 1926,
-        "48": 2123,
-        "60": 3159
+        "42": 3502,
+        "48": 3860,
+        "60": 5743
     };
 
-    return prices[size] * 0.55; // Apply 45% discount
-}
-
-function getDiscountedPrice(item) {
-    const prices = {
-        "Arches": 83,
-        "Storage Boxes": 591,
-        "Outer Block": 66,
-        "Clay Flu": 105,
-        "Buckets Mortar": 68,
-        "Full Brick": 2
-    };
-
-    return prices[item] * 0.65; // Apply 35% discount
+    return prices[size];
 }
 
 function calculateMinBuckets(size) {
@@ -53,4 +54,17 @@ function calculateMinBuckets(size) {
     };
 
     return minBucketsMap[size];
+}
+
+function calculateHeight(fireboxSize, outerBlock) {
+    const heights = {
+        "42": 66.5,
+        "48": 72.5,
+        "60": 85
+    };
+
+    const baseHeight = heights[fireboxSize];
+    const additionalHeight = outerBlock * 8;
+
+    return baseHeight + additionalHeight;
 }
