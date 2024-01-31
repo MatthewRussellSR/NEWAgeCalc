@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <label for="firebox">Select Firebox Size:</label>
+        <select id="firebox">
+            <option value="42">42" Fire Box</option>
+            <option value="48">48" Fire Box</option>
+            <option value="60">60" Fire Box</option>
+        </select>
+
+        <label for="arches">Arches (Quantity):</label>
+        <input type="number" id="arches" value="0">
+
+        <label for="storageBoxes">Storage Boxes (Quantity):</label>
+        <input type="number" id="storageBoxes" value="0">
+
+        <label for="outerBlock">Outer Block (Quantity):</label>
+        <input type="number" id="outerBlock" value="0">
+
+        <label for="clayFlu">Clay Flu (Quantity):</label>
+        <input type="number" id="clayFlu" value="0">
+
+        <label for="bucketsMortar">Buckets Mortar (Quantity):</label>
+        <input type="number" id="bucketsMortar" value="0">
+
+        <label for="fullBrick">Full Brick (Quantity):</label>
+        <input type="number" id="fullBrick" value="0">
+
+        <button onclick="calculateTotal()">Calculate Total</button>
+
+        <p id="result">Total Cost: $0</p>
+        <p id="minBuckets">Minimum Buckets of Mortar: 0</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
